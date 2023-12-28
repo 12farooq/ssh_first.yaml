@@ -1,0 +1,56 @@
+key gitHub
+
+name: ssh-pipelines
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ssh-pipelines:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH into server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ali.techpath.pro
+          username: farooqaliahmad
+          password: 12345678@farooq
+          port: 22
+          script: |
+            rm -rf /home/github/test || true
+            ls -la  
+            echo "ssh pipeline"
+            mkdir -p /home/github/test/test1
+            mkdir -p /home/github/test/test2
+
+
+
+ssh-keygen -t rsa -b 4096 -C "farooqahmadshuddy@gmail.com"      
+
+SHA256:uaCywvRcM69M4QWMASVRZzYN7d9A9fnGSe6Zt9RKxFQ farooqahmadshuddy@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+| +=+ *+   ..    E|
+|  . B .o .  . .. |
+|   . o. .    o.. |
+|      .. o   o= .|
+|     ...S o   o* |
+| .  .=o. o . .o +|
+|o + oo+ .     .=o|
+|.. =o  .     ...o|
+| ..  o.       .. |
++----[SHA256]-----+
+
+
+
+
+# Remove the private key
+del %userprofile%\.ssh\SHA256:uaCywvRcM69M4QWMASVRZzYN7d9A9fnGSe6Zt9RKxFQ farooqahmadshuddy@gmail.com
+
+
+# Remove the corresponding public key
+del %userprofile%\.ssh\SHA256:uaCywvRcM69M4QWMASVRZzYN7d9A9fnGSe6Zt9RKxFQ farooqahmadshuddy@gmail.com
+
